@@ -26,7 +26,7 @@ const Viewdetails = () => {
                 <div className="w-[300px] h-[300px]">
                     <img src={photo} className="w-full h-full border rounded-sm object-cover" alt="employee image" />
                 </div>
-                <div className="grid grid-cols-3 gap-5 mt-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
                     <div className="flex flex-col gap-3">
                         <p><span className="font-bold">Employee Name:</span> {firstName} {lastName}</p>
                         <p><span className="font-bold">Employee ID:</span> {employee_id}</p>

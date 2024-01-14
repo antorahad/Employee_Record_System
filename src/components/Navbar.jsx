@@ -6,7 +6,7 @@ const Navbar = () => {
             <div className="navbar max-w-6xl mx-auto">
                 <div className="navbar-start">
                     <Link to={'/'}>
-                         <h4 className="text-xl font-bold">EMS</h4>
+                         <h4 className="text-xl font-bold">ERMS</h4>
                     </Link>
                 </div>
                 <div className="navbar-end">
