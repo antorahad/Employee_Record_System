@@ -8,6 +8,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <Error/>,
     children: [
       {
         path: '/',
@@ -49,6 +50,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Private from './private/Private';
+import Error from './error/Error';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

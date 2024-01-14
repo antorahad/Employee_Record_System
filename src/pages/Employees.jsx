@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Employee from "../components/Employee";
 import Swal from "sweetalert2";
-import noData from '../assets/no-data.jpg'
 
 const Employees = () => {
     const loadedEmployees = useLoaderData();
@@ -72,16 +71,11 @@ const Employees = () => {
                 <input onChange={handleSearchEmployee} type="text" placeholder="Search Employee" className="input input-bordered rounded-sm w-full" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
-                {currentFilterEmployees.length > 0 ? (
+                {
                     currentFilterEmployees.map((employee) => (
                         <Employee key={employee._id} employee={employee} handleDeleteEmployee={handleDeleteEmployee}></Employee>
                     ))
-                ) : (
-                    <div className="flex flex-col items-center justify-center">
-                        <img src={noData} alt="Error" className="w-full h-full" />
-                        <p>No matching employees found.</p>
-                    </div>
-                )}
+                }
             </div>
             <div className="flex justify-center mt-5">
                 <button

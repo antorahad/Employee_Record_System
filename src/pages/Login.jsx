@@ -28,6 +28,12 @@ const Login = () => {
             })
             .catch(error => {
                 console.log(error.message);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops",
+                    text: `${error.message}`,
+                    footer: ''
+                });
             });
     
     }
