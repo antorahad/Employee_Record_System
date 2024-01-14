@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Employee from "../components/Employee";
 import Swal from "sweetalert2";
+import noData from '../assets/no-data.jpg'
 
 const Employees = () => {
     const loadedEmployees = useLoaderData();
@@ -76,8 +77,8 @@ const Employees = () => {
                         <Employee key={employee._id} employee={employee} handleDeleteEmployee={handleDeleteEmployee}></Employee>
                     ))
                 ) : (
-                    <div className="flex items-center justify-center">
-                        <img src="path-to-error-image" alt="Error" className="w-16 h-16" />
+                    <div className="flex flex-col items-center justify-center">
+                        <img src={noData} alt="Error" className="w-full h-full" />
                         <p>No matching employees found.</p>
                     </div>
                 )}

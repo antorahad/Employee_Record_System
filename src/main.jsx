@@ -7,34 +7,34 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,
+    element: <Layout />,
     children: [
       {
         path: '/',
-        element: <Addfrom/>
+        element: <Private><Addfrom /></Private>
       },
       {
         path: '/employees',
-        element: <Employees/>,
+        element: <Private><Employees /></Private>,
         loader: () => fetch('http://localhost:4000/employees')
       },
       {
         path: '/viewdetails/:id',
-        element: <Viewdetails/>,
-        loader: ({params}) => fetch(`http://localhost:4000/employees/${params.id}`)
+        element: <Private><Viewdetails /></Private>,
+        loader: ({ params }) => fetch(`http://localhost:4000/employees/${params.id}`)
       },
       {
         path: '/updateform/:id',
-        element: <Updateform/>,
-        loader: ({params}) => fetch(`http://localhost:4000/employees/${params.id}`)
+        element: <Private><Updateform /></Private>,
+        loader: ({ params }) => fetch(`http://localhost:4000/employees/${params.id}`)
       },
       {
         path: '/login',
-        element: <Login/>
+        element: <Login />
       },
       {
         path: '/register',
-        element: <Register/>
+        element: <Register />
       }
     ]
   },
@@ -47,9 +47,13 @@ import Viewdetails from './pages/Viewdetails';
 import Updateform from './pages/Updateform';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AuthProvider from './AuthProvider/AuthProvider';
+import Private from './private/Private';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
