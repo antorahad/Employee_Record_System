@@ -26,9 +26,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <ul className="hidden lg:flex items-center justify-center gap-5">
-                        <li className="px-3"><Link to={'/'}>Add employee</Link></li>
-                        <li className="px-3"><Link to={'/employees'}>Manage employee</Link></li>
-                        <li className="px-3">
+                        <li className="px-2"><Link to={'/'}>Add employee</Link></li>
+                        <li className="px-2"><Link to={'/employees'}>Manage employee</Link></li>
+                        <li className="px-2">
                             {
                                 user ?
 
