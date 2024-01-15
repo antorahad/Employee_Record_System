@@ -65,7 +65,7 @@ const Employees = () => {
     };
 
     return (
-        <div className="min-h-screen flex flex-col items-start justify-center gap-5 max-w-6xl mx-auto px-5 py-10">
+        <div className="min-h-screen flex flex-col items-start justify-center gap-5 max-w-6xl mx-auto px-5 py-20">
             <h1 className="text-4xl font-bold">Manage All Employees</h1>
             <div className="flex mt-5 w-full md:w-1/3">
                 <input onChange={handleSearchEmployee} type="text" placeholder="Search Employee" className="input input-bordered rounded-sm w-full" />

@@ -20,7 +20,7 @@ const Viewdetails = () => {
         status,
     } = loadEmployeeData
     return (
-        <div className="min-h-screen py-10 px-5 max-w-6xl mx-auto flex flex-col justify-center gap-5">
+        <div className="min-h-screen py-20 px-5 max-w-6xl mx-auto flex flex-col justify-center gap-5">
             <h1 className="text-4xl font-bold">Details of {firstName} {lastName}</h1>
             <div className="mt-5 flex flex-col gap-5">
                 <div className="w-[300px] h-[300px]">

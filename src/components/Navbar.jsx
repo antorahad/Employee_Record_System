@@ -17,7 +17,7 @@ const Navbar = () => {
         logOut();
     }
     return (
-        <div className="bg-neutral text-neutral-content p-5">
+        <div className="bg-neutral text-neutral-content px-5 w-full fixed z-30">
             <div className="navbar max-w-6xl mx-auto">
                 <div className="navbar-start">
                     <Link to={'/'}>

@@ -38,7 +38,7 @@ const Login = () => {
     
     }
     return (
-        <div className="min-h-screen flex flex-col gap-5 items-center justify-center py-10 px-5 max-w-xl mx-auto">
+        <div className="min-h-screen flex flex-col gap-5 items-center justify-center py-20 px-5 max-w-xl mx-auto">
             <h1 className="text-4xl font-bold">User Login</h1>
             <form onSubmit={handleLogIn} className="bg-slate-100 shadow-sm p-5 flex flex-col items-center justify-center gap-5 w-full">
                 <input type="email" name="email" placeholder="User Email" className="input rounded-sm w-full" />

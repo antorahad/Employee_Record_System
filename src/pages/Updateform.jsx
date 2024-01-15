@@ -80,7 +80,7 @@ const Updateform = () => {
 
     }
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center gap-5 py-10 px-5 max-w-6xl mx-auto">
+        <div className="min-h-screen flex flex-col items-center justify-center gap-5 py-20 px-5 max-w-6xl mx-auto">
             <h1 className="text-2xl lg:text-4xl font-bold">Update Details: {firstName} {lastName}</h1>
             <form onSubmit={handleUpdateEmployee} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full bg-slate-100 shadow-md p-5 rounded-sm gap-5 mt-5">
                 <div className="flex flex-col gap-2">
