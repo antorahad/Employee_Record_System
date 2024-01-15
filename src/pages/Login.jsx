@@ -47,7 +47,7 @@ const Login = () => {
                 <input type="email" name="email" placeholder="User Email" className="input rounded-sm w-full" />
                 <input type="password" name="password" placeholder="User Password" className="input rounded-sm w-full" />
                 <input type="submit" value="Login" className="btn btn-success px-10 py-3 rounded-sm text-white" />
-                <p className="text-sm">New to EMS? <Link to={'/register'} className="underline">Register</Link></p>
+                <p className="text-sm">New to ERMS? <Link to={'/register'} className="underline">Register</Link></p>
             </form>
         </div>
     );
