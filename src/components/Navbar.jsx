@@ -53,7 +53,7 @@ const Navbar = () => {
                     </button>
                     {
                         toggle &&
-                        <ul className="flex items-center justify-center flex-col p-5 min-h-screen w-1/2 bg-slate-950 bg-opacity-70 absolute left-0 top-0 z-10">
+                        <ul className="flex items-center justify-center flex-col p-5 h-screen w-1/2 bg-slate-950 bg-opacity-70 absolute left-0 top-0 z-10">
                             <li className="py-3"><Link to={'/'}>Add employee</Link></li>
                             <li className="py-3"><Link to={'/employees'}>Manage employee</Link></li>
                             <li className="py-3">
