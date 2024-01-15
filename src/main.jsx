@@ -8,7 +8,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    errorElement: <Error/>,
+    errorElement: <Error />,
     children: [
       {
         path: '/',
@@ -17,17 +17,17 @@ const router = createBrowserRouter([
       {
         path: '/employees',
         element: <Private><Employees /></Private>,
-        loader: () => fetch('http://localhost:4000/employees')
+        loader: () => fetch('https://erms-tau.vercel.app/employees')
       },
       {
         path: '/viewdetails/:id',
         element: <Private><Viewdetails /></Private>,
-        loader: ({ params }) => fetch(`http://localhost:4000/employees/${params.id}`)
+        loader: ({ params }) => fetch(`https://erms-tau.vercel.app/employees/${params.id}`)
       },
       {
         path: '/updateform/:id',
         element: <Private><Updateform /></Private>,
-        loader: ({ params }) => fetch(`http://localhost:4000/employees/${params.id}`)
+        loader: ({ params }) => fetch(`https://erms-tau.vercel.app/employees/${params.id}`)
       },
       {
         path: '/login',
@@ -51,11 +51,14 @@ import Register from './pages/Register';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Private from './private/Private';
 import Error from './error/Error';
+import { HelmetProvider } from 'react-helmet-async';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </HelmetProvider>
   </React.StrictMode>,
 )

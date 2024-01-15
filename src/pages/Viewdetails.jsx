@@ -1,10 +1,11 @@
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 const Viewdetails = () => {
     const loadEmployeeData = useLoaderData();
     const {
         employee_id,
-       address,
+        address,
         firstName,
         lastName,
         gender,
@@ -21,6 +22,9 @@ const Viewdetails = () => {
     } = loadEmployeeData
     return (
         <div className="min-h-screen py-20 px-5 max-w-6xl mx-auto flex flex-col justify-center gap-5">
+            <Helmet>
+                <title>ERMS - Employee Details</title>
+            </Helmet>
             <h1 className="text-4xl font-bold">Details of {firstName} {lastName}</h1>
             <div className="mt-5 flex flex-col gap-5">
                 <div className="w-[300px] h-[300px]">
@@ -37,7 +41,7 @@ const Viewdetails = () => {
                     <div className="flex flex-col gap-3">
                         <p><span className="font-bold">Joining Date:</span> {joining}</p>
                         <p className="font-bold">
-                            Account Status: 
+                            Account Status:
                             <span className={`badge ml-2 ${status === 'Running' ? 'badge-success' : 'badge-error'} p-2 rounded-md text-xs text-white`}>{status}</span>
                         </p>
                         <p><span className="font-bold">National ID:</span> {nid}</p>

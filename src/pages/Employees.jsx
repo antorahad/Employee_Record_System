@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Employee from "../components/Employee";
 import Swal from "sweetalert2";
+import { Helmet } from 'react-helmet-async';
 
 const Employees = () => {
     const loadedEmployees = useLoaderData();
@@ -41,7 +42,7 @@ const Employees = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:4000/employees/${_id}`, {
+                fetch(`https://erms-tau.vercel.app/employees/${_id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -66,6 +67,9 @@ const Employees = () => {
 
     return (
         <div className="min-h-screen flex flex-col items-start justify-center gap-5 max-w-6xl mx-auto px-5 py-20">
+            <Helmet>
+                <title>ERMS - All Employee</title>
+            </Helmet>
             <h1 className="text-4xl font-bold">Manage All Employees</h1>
             <div className="flex mt-5 w-full md:w-1/3">
                 <input onChange={handleSearchEmployee} type="text" placeholder="Search Employee" className="input input-bordered rounded-sm w-full" />

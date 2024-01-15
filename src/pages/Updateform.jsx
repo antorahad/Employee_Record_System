@@ -1,25 +1,26 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from 'react-helmet-async';
 
 const Updateform = () => {
-    const loadedEmployeeData = useLoaderData ();
+    const loadedEmployeeData = useLoaderData();
     const {
         _id,
         employee_id,
         address,
-         firstName,
-         lastName,
-         gender,
-         email,
-         mobile,
-         telephone,
-         nid,
-         department,
-         designation,
-         sallary,
-         joining,
-         photo,
-         status,
+        firstName,
+        lastName,
+        gender,
+        email,
+        mobile,
+        telephone,
+        nid,
+        department,
+        designation,
+        sallary,
+        joining,
+        photo,
+        status,
     } = loadedEmployeeData;
     const handleUpdateEmployee = e => {
         e.preventDefault();
@@ -58,7 +59,7 @@ const Updateform = () => {
             address
         };
 
-        fetch(`http://localhost:4000/employees/${_id}`, {
+        fetch(`https://erms-tau.vercel.app/employees/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -68,7 +69,7 @@ const Updateform = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.modifiedCount > 0) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: "Updated!",
                         text: "Employee detail updateed",
@@ -81,6 +82,9 @@ const Updateform = () => {
     }
     return (
         <div className="min-h-screen flex flex-col items-center justify-center gap-5 py-20 px-5 max-w-6xl mx-auto">
+            <Helmet>
+                <title>ERMS - Update Employee</title>
+            </Helmet>
             <h1 className="text-2xl lg:text-4xl font-bold">Update Details: {firstName} {lastName}</h1>
             <form onSubmit={handleUpdateEmployee} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full bg-slate-100 shadow-md p-5 rounded-sm gap-5 mt-5">
                 <div className="flex flex-col gap-2">
@@ -123,7 +127,7 @@ const Updateform = () => {
                 </div>
                 <div className="flex flex-col gap-2">
                     <label className="font-semibold">Joining Date</label>
-                    <input type="date" name="joining" className="input w-full rounded-sm" defaultValue={joining}/>
+                    <input type="date" name="joining" className="input w-full rounded-sm" defaultValue={joining} />
                 </div>
                 <div className="flex flex-col gap-2">
                     <label className="font-semibold">Account Status</label>
@@ -144,7 +148,7 @@ const Updateform = () => {
                 </div>
                 <div className="flex flex-col gap-2 col-span-1 md:col-span-2">
                     <label className="font-semibold">Upload Photo</label>
-                    <input type="text" name="photo" className="input w-full rounded-sm" defaultValue={photo}/>
+                    <input type="text" name="photo" className="input w-full rounded-sm" defaultValue={photo} />
                 </div>
                 <div className="flex flex-col gap-2">
                     <label className="font-semibold">Email Address</label>
